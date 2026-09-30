@@ -1,67 +1,150 @@
 /* Tailwind CSS v4 — CSS-first config (no tailwind.config.js needed) */
 @import "tailwindcss";
 
-/* Content is auto-detected: v4 scans the whole project (respecting .gitignore,
-   skipping node_modules / binaries), so views, Soli source, and JS are all
-   covered without an explicit source list. */
-
-/* Theme tokens — extend Tailwind's defaults */
+/* Dératis — "planche naturaliste": specimens on white plates, set on a
+   cool sage paper; ink green for text, wasp yellow reserved for calling. */
 @theme {
-    --font-sans: Inter, system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
+    --font-sans: "Archivo", system-ui, sans-serif;
+    --font-latin: "Newsreader", Georgia, serif;
+
+    --color-paper: #edefe9;
+    --color-plate: #ffffff;
+    --color-ink: #17261e;
+    --color-ink-soft: #24382d;
+    --color-schist: #56615a;
+    --color-rule: #c9cfc6;
+    --color-wasp: #f4c21b;
+    --color-wasp-deep: #e0ae00;
+    --color-rust: #a4432a;
 }
 
-/* Base styles */
 @layer base {
     html {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
     }
 
     body {
-        @apply bg-white text-gray-900 leading-relaxed;
+        @apply bg-paper text-ink leading-relaxed;
+        font-size: 1.0625rem;
     }
 
-    h1 { @apply text-4xl font-bold tracking-tight; }
-    h2 { @apply text-3xl font-semibold tracking-tight; }
-    h3 { @apply text-2xl font-semibold; }
-    h4 { @apply text-xl font-medium; }
-    h5 { @apply text-lg font-medium; }
-    h6 { @apply text-base font-medium; }
-
-    a { @apply text-indigo-600 hover:text-indigo-500 transition-colors; }
-
     img, video { @apply max-w-full h-auto; }
+
+    :focus-visible {
+        outline: 3px solid var(--color-ink);
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
 }
 
-/* Custom application styles */
+@layer components {
+    /* Headlines: Archivo pulled to its condensed width, like van lettering. */
+    .display {
+        font-stretch: 72%;
+        font-weight: 800;
+        line-height: 0.94;
+        letter-spacing: -0.012em;
+        text-wrap: balance;
+    }
 
-/* Custom animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
+    .heading {
+        font-stretch: 78%;
+        font-weight: 750;
+        line-height: 1.02;
+        text-wrap: balance;
+    }
 
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
+    .latin {
+        font-family: var(--font-latin);
+        font-style: italic;
+        font-weight: 400;
+    }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
+    .measure { max-width: 64ch; }
 
-::-webkit-scrollbar-track {
-    background: transparent;
-}
+    /* The call action: the only yellow thing on the page. */
+    .btn-call {
+        @apply inline-flex items-center gap-3 rounded-md bg-wasp px-5 py-3 font-bold text-ink no-underline;
+        font-stretch: 90%;
+        box-shadow: inset 0 -3px 0 rgb(0 0 0 / 0.14);
+        transition: background-color 120ms ease;
+    }
+    .btn-call:hover { @apply bg-wasp-deep; }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(99, 102, 241, 0.3);
-    border-radius: 4px;
-}
+    .btn-line {
+        @apply inline-flex items-center gap-2 rounded-md border-2 border-ink px-5 py-[0.625rem] font-bold text-ink no-underline;
+        font-stretch: 90%;
+        transition: background-color 120ms ease, color 120ms ease;
+    }
+    .btn-line:hover { @apply bg-ink text-paper; }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(99, 102, 241, 0.5);
+    .link {
+        @apply font-semibold text-ink underline decoration-2 underline-offset-4;
+        text-decoration-color: var(--color-wasp-deep);
+    }
+    .link:hover { text-decoration-color: var(--color-ink); }
+
+    /* Specimen plate: a white mount with a hairline frame, a label beneath. */
+    .plate {
+        @apply block bg-plate text-ink no-underline;
+        border: 1px solid var(--color-rule);
+        transition: border-color 120ms ease;
+    }
+    a.plate:hover { border-color: var(--color-ink); }
+    a.plate:hover .plate-cta { @apply underline; }
+
+    .plate-label {
+        @apply border-t px-5 pt-4 pb-5;
+        border-color: var(--color-rule);
+    }
+
+    /* Scale bar under a specimen: shows the adult size on the label. */
+    .scale {
+        @apply flex items-center gap-2 text-sm text-schist;
+    }
+    .scale::before {
+        content: "";
+        width: 2.5rem;
+        height: 0.5rem;
+        border: 1.5px solid currentColor;
+        border-top: 0;
+        background: linear-gradient(90deg, currentColor 50%, transparent 50%) bottom / 1.25rem 1.5px repeat-x;
+    }
+
+    /* Prose of the service pages and articles. */
+    .prose-deratis { max-width: 64ch; }
+    .prose-deratis h2 {
+        @apply mt-12 mb-4 text-3xl;
+        font-stretch: 78%;
+        font-weight: 750;
+        line-height: 1.02;
+    }
+    .prose-deratis h3 { @apply mt-8 mb-2 text-xl font-bold; }
+    .prose-deratis p { @apply mb-4; }
+    .prose-deratis ul { @apply mb-6 space-y-2 pl-0; }
+    .prose-deratis ul > li { @apply relative pl-6; }
+    .prose-deratis ul > li::before {
+        content: "";
+        @apply absolute left-0 top-[0.7em] h-[3px] w-3 bg-ink;
+    }
+    .prose-deratis figure { @apply my-8; }
+    .prose-deratis figcaption { @apply mt-2 text-sm text-schist; }
+    .prose-deratis .plate-label p { @apply mb-0; }
+
+    /* Form fields */
+    .field-label { @apply mb-1.5 block font-semibold; }
+    .field {
+        @apply block w-full rounded-md border-2 bg-plate px-3.5 py-2.5 text-ink;
+        border-color: var(--color-rule);
+    }
+    .field:focus { outline: none; border-color: var(--color-ink); }
+    .field-error-text { @apply mt-1.5 text-sm font-semibold text-rust; }
+    .field[aria-invalid="true"] { border-color: var(--color-rust); }
 }

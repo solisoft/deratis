@@ -1,0 +1,38 @@
+<p class="text-lg">Guêpes et frelons deviennent nuisibles quand leur nid, ou leurs allées et venues, se trouvent tout près de votre maison ou de votre entreprise.</p>
+<p>Ils s'installent volontiers dans notre cadre de vie&nbsp;: porches, greniers, cheminées, boîtes aux lettres, poutres, volets roulants, fenêtres, murs, troncs ou branches. Leurs piqûres sont très douloureuses.</p>
+
+<h2>Les frelons</h2>
+<p>Le frelon est un hyménoptère social de la famille des Vespidés, plus imposant que la guêpe. En France on en rencontre deux espèces.</p>
+
+<div class="my-8 grid gap-5 sm:grid-cols-2">
+  <figure class="plate !my-0">
+    <img src="<%= public_path("images/frelon-europeen.jpg") %>" alt="Frelon européen" width="520" height="360" loading="lazy" class="aspect-[13/9] w-full object-contain">
+    <figcaption class="plate-label !mt-0">
+      <p class="text-lg font-bold text-ink">Frelon européen</p>
+      <p class="latin text-lg">Vespa crabro</p>
+      <p class="mt-2 text-sm text-schist">25 à 40 mm. Abdomen jaune vif vers l'extrémité, thorax et pattes noirs ou bruns.</p>
+    </figcaption>
+  </figure>
+  <figure class="plate !my-0">
+    <img src="<%= public_path("images/frelon-asiatique.jpg") %>" alt="Frelon asiatique" width="520" height="360" loading="lazy" class="aspect-[13/9] w-full object-contain">
+    <figcaption class="plate-label !mt-0">
+      <p class="text-lg font-bold text-ink">Frelon asiatique</p>
+      <p class="latin text-lg">Vespa velutina</p>
+      <p class="mt-2 text-sm text-schist">25 à 30 mm. Abdomen plus orangé que jaune, pattes jaunes.</p>
+    </figcaption>
+  </figure>
+</div>
+
+<h2>Les guêpes</h2>
+<p>Hyménoptères eux aussi, elles portent des bandes jaunes et noires en travers de l'abdomen et mesurent de 10 à 19 mm. On compte des milliers d'espèces en France&nbsp;; les plus répandues sont la guêpe commune (<span class="latin">Vespula vulgaris</span>) et la guêpe germanique (<span class="latin">Vespula germanica</span>).</p>
+<p>Seules les femelles ont un dard venimeux. Contrairement à l'abeille, une guêpe peut piquer plusieurs fois de suite.</p>
+<p>Elles nichent souvent dans le sol, ou à l'abri&nbsp;: murs creux, soupentes, remises, terrasses au bord de la piscine. Un nid peut abriter des milliers d'insectes prêts à piquer.</p>
+
+<figure>
+  <img src="<%= public_path("images/nid-guepes-charpente.jpg") %>" alt="Nid de guêpes accroché à une poutre sous une charpente" width="508" height="682" loading="lazy" class="w-full max-w-60 rounded-sm">
+  <figcaption>Nid de guêpes sous une charpente.</figcaption>
+</figure>
+
+<h2>Faites appel à un professionnel</h2>
+<p class="border-l-[3px] border-rust pl-4 text-ink">Les piqûres sont très douloureuses et peuvent être mortelles selon leur nombre, leur emplacement et la sensibilité allergique de la personne piquée.</p>
+<p>Voir comment nous procédons&nbsp;: <a href="<%= guepes_et_frelons_path() %>" class="link">destruction de nids de guêpes et frelons</a>.</p>

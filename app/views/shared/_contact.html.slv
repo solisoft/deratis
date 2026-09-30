@@ -1,0 +1,76 @@
+<%# The quote form, closing most pages. Reads @contact_request and
+    @field_errors (French message per rejected field). %>
+<section id="devis" class="border-t border-rule bg-plate">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[1fr_1.25fr]">
+    <div>
+      <h2 class="display text-5xl sm:text-6xl">Un devis gratuit, sans attendre</h2>
+      <p class="mt-5 max-w-md text-lg text-schist">Le plus rapide reste de nous appeler. Sinon, laissez votre numéro&nbsp;: nous vous rappelons au plus vite pour convenir d'un passage.</p>
+      <a href="<%= deratis_phone_uri() %>" class="btn-call mt-8 text-2xl">
+        <%- phone_icon("h-6 w-6") %><%= deratis_phone() %>
+      </a>
+      <dl class="mt-10 space-y-3">
+        <div class="flex gap-3"><dt class="w-24 shrink-0 text-schist">E-mail</dt><dd><a href="mailto:<%= deratis_email() %>" class="link"><%= deratis_email() %></a></dd></div>
+        <div class="flex gap-3"><dt class="w-24 shrink-0 text-schist">Adresse</dt><dd>30340 Rousson</dd></div>
+        <div class="flex gap-3"><dt class="w-24 shrink-0 text-schist">Secteur</dt><dd>Gard, Lozère, Ardèche</dd></div>
+      </dl>
+    </div>
+
+    <form method="post" action="<%= contact_path() %>" class="grid gap-5 sm:grid-cols-2" novalidate>
+      <%- csrf_field() %>
+      <% if @field_errors.length > 0 %>
+      <p class="rounded-md border-2 border-rust bg-rust/5 px-4 py-3 font-semibold text-rust sm:col-span-2" role="alert">Votre demande n'est pas partie&nbsp;: corrigez les champs signalés ci-dessous.</p>
+      <% end %>
+
+      <div>
+        <label for="contact-name" class="field-label">Nom</label>
+        <input id="contact-name" name="name" type="text" class="field" autocomplete="name" required value="<%= @contact_request.name %>" aria-invalid="<%= @field_errors["name"] ? "true" : "false" %>"<% if @field_errors["name"] %> aria-describedby="contact-name-error"<% end %>>
+        <% if @field_errors["name"] %><p id="contact-name-error" class="field-error-text"><%= @field_errors["name"] %></p><% end %>
+      </div>
+
+      <div>
+        <label for="contact-phone" class="field-label">Téléphone</label>
+        <input id="contact-phone" name="phone" type="tel" class="field" autocomplete="tel" required value="<%= @contact_request.phone %>" aria-invalid="<%= @field_errors["phone"] ? "true" : "false" %>"<% if @field_errors["phone"] %> aria-describedby="contact-phone-error"<% end %>>
+        <% if @field_errors["phone"] %><p id="contact-phone-error" class="field-error-text"><%= @field_errors["phone"] %></p><% end %>
+      </div>
+
+      <div>
+        <label for="contact-email" class="field-label">E-mail <span class="font-normal text-schist">(facultatif)</span></label>
+        <input id="contact-email" name="email" type="email" class="field" autocomplete="email" value="<%= @contact_request.email %>" aria-invalid="<%= @field_errors["email"] ? "true" : "false" %>"<% if @field_errors["email"] %> aria-describedby="contact-email-error"<% end %>>
+        <% if @field_errors["email"] %><p id="contact-email-error" class="field-error-text"><%= @field_errors["email"] %></p><% end %>
+      </div>
+
+      <div>
+        <label for="contact-commune" class="field-label">Commune <span class="font-normal text-schist">(facultatif)</span></label>
+        <input id="contact-commune" name="commune" type="text" class="field" autocomplete="address-level2" value="<%= @contact_request.commune %>">
+      </div>
+
+      <div class="sm:col-span-2">
+        <label for="contact-pest" class="field-label">Le nuisible</label>
+        <select id="contact-pest" name="pest" class="field" aria-invalid="<%= @field_errors["pest"] ? "true" : "false" %>">
+          <option value="">Choisir</option>
+          <% for choice in contact_pest_choices() %>
+          <option value="<%= choice[0] %>"<% if choice[0] == @contact_request.pest %> selected<% end %>><%= choice[1] %></option>
+          <% end %>
+        </select>
+        <% if @field_errors["pest"] %><p class="field-error-text"><%= @field_errors["pest"] %></p><% end %>
+      </div>
+
+      <div class="sm:col-span-2">
+        <label for="contact-message" class="field-label">Ce que vous avez constaté</label>
+        <textarea id="contact-message" name="message" rows="5" class="field" required placeholder="Par exemple : un nid sous le toit, côté jardin, beaucoup d'allées et venues depuis une semaine." aria-invalid="<%= @field_errors["message"] ? "true" : "false" %>"<% if @field_errors["message"] %> aria-describedby="contact-message-error"<% end %>><%= @contact_request.message %></textarea>
+        <% if @field_errors["message"] %><p id="contact-message-error" class="field-error-text"><%= @field_errors["message"] %></p><% end %>
+      </div>
+
+      <%# Honeypot: hidden from people, filled by bots. %>
+      <div class="hidden" aria-hidden="true">
+        <label for="contact-website">Site web</label>
+        <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 sm:col-span-2">
+        <button type="submit" class="btn-line cursor-pointer text-lg">Envoyer ma demande</button>
+        <p class="text-sm text-schist">Vos coordonnées servent uniquement à vous rappeler.</p>
+      </div>
+    </form>
+  </div>
+</section>

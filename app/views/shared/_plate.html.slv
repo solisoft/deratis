@@ -1,0 +1,15 @@
+<%# One specimen: the photo on its white mount, then the label — common name,
+    Latin name, adult size. Links to the page that treats it, unless that is
+    the current page. %>
+<% linked = !current_path?(pest["path"]) %>
+<% if linked %><a href="<%= pest["path"] %>" class="plate group"><% else %><div class="plate"><% end %>
+  <img src="<%= public_path("images/" + pest["image"]) %>" alt="<%= pest["name"] %>" width="520" height="360" loading="lazy" class="aspect-[13/9] w-full object-contain">
+  <div class="plate-label">
+    <p class="text-xl font-bold leading-tight"><%= pest["name"] %></p>
+    <p class="latin text-lg text-schist"><%= pest["latin"] %></p>
+    <div class="mt-3 flex items-center justify-between gap-3">
+      <span class="scale"><%= pest["size"] %></span>
+      <% if linked %><span class="plate-cta text-sm font-semibold">Voir le traitement</span><% end %>
+    </div>
+  </div>
+<% if linked %></a><% else %></div><% end %>

@@ -1,0 +1,46 @@
+<%- partial("shared/service_hero", {}) %>
+
+<section class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_20rem]">
+  <div class="prose-deratis">
+    <h2 class="!mt-0">Les trois espèces</h2>
+    <div class="space-y-8">
+      <article class="border-t-[3px] border-ink pt-4">
+        <h3 class="!mt-0">Le surmulot, ou rat d'égout</h3>
+        <p class="latin -mt-1 text-lg text-schist">Rattus norvegicus</p>
+        <p class="mt-2">Il aime les lieux humides et creuse terriers et galeries dans les sous-sols, les égouts et aux abords des habitations. Omnivore.</p>
+      </article>
+      <article class="border-t-[3px] border-ink pt-4">
+        <h3 class="!mt-0">Le rat noir, ou rat des greniers</h3>
+        <p class="latin -mt-1 text-lg text-schist">Rattus rattus</p>
+        <p class="mt-2">Il occupe les parties hautes et sèches&nbsp;: charpentes, faîtes des murs, entre plancher et plafond. Dans le Midi on le trouve aussi dehors, jusque dans les arbres. Il mange surtout fruits et graines.</p>
+      </article>
+      <article class="border-t-[3px] border-ink pt-4">
+        <h3 class="!mt-0">La souris</h3>
+        <p class="latin -mt-1 text-lg text-schist">Mus musculus</p>
+        <p class="mt-2">Elle peut nicher partout, des caves aux greniers. Sa petite taille lui ouvre les faux plafonds, les doubles cloisons, les tiroirs.</p>
+      </article>
+    </div>
+
+    <figure>
+      <img src="<%= public_path("images/rattus-comparaison.jpg") %>" alt="Planche comparant Rattus rattus et Rattus norvegicus&nbsp;: queue, silhouette, oreilles, yeux, museau" width="208" height="186" loading="lazy" class="rounded-sm bg-plate p-3">
+      <figcaption>Rat noir et surmulot&nbsp;: queue plus longue que le corps, grandes oreilles et museau pointu pour le premier&nbsp;; silhouette épaisse et petites oreilles pour le second.</figcaption>
+    </figure>
+
+    <h2>Les dégâts</h2>
+    <p>Rats et souris rongent, consomment et souillent ce qu'ils ne mangent pas. Ils font bien plus de dégâts qu'ils ne consomment, et toute denrée attaquée doit être jetée. Ils s'en prennent aussi aux isolants, câbles, gaines et fils électriques&nbsp;: pannes, courts-circuits, incendies.</p>
+
+    <h2>Les risques pour la santé</h2>
+    <p>Directement ou par leurs parasites, ils transmettent de nombreuses maladies à l'homme et aux animaux domestiques&nbsp;:</p>
+    <ul>
+      <li><strong>par morsure</strong>&nbsp;: tétanos, streptobacillose, pasteurellose et infections de la plaie&nbsp;;</li>
+      <li><strong>par l'urine</strong>&nbsp;: très souvent la leptospirose&nbsp;;</li>
+      <li><strong>par les puces</strong>&nbsp;: typhus murin, salmonellose, fièvres hémorragiques, voire la peste.</li>
+    </ul>
+    <p class="border-l-[3px] border-rust pl-4 text-ink">Ce sont des voisins dangereux pour vous et vos animaux. À la moindre trace, faites-les identifier.</p>
+    <p>Pour savoir si vous en avez&nbsp;: <a href="<%= article_path("2100316856-comment-detecter-la-presence-de-rongeurs") %>" class="link">les huit signes de présence</a>. Pour la manière dont nous traitons&nbsp;: <a href="<%= deratisation_path() %>" class="link">la dératisation</a>.</p>
+  </div>
+
+  <%- partial("shared/specimens_aside", {}) %>
+</section>
+
+<%- partial("shared/contact", {}) %>

@@ -1,0 +1,31 @@
+<%- partial("shared/service_hero", {}) %>
+
+<section class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_20rem]">
+  <div class="prose-deratis">
+    <h2 class="!mt-0">Trouver le nid</h2>
+    <p>Par beau temps, les allées et venues des ouvrières qui rapportent la nourriture trahissent l'emplacement du nid. On le trouve souvent tout près de la maison&nbsp;: porche, grenier, cheminée, boîte aux lettres, poutre, volet roulant, mur creux, tronc ou branche.</p>
+    <p class="border-l-[3px] border-rust pl-4 text-ink">Ne vous en approchez pas. Une guêpe peut piquer plusieurs fois de suite, et un nid peut abriter des milliers d'insectes prêts à défendre leur colonie. Les piqûres multiples peuvent être graves, surtout chez les personnes allergiques.</p>
+
+    <h2>Comment nous le détruisons</h2>
+    <p>Le nid est traité de préférence quand l'activité alentour est au repos. L'opérateur porte une tenue de protection complète (voilette, gants, manches et pantalons ajustés) et fait s'éloigner toute autre personne. Selon l'emplacement, nous utilisons&nbsp;:</p>
+    <dl class="mb-6 space-y-4">
+      <div><dt class="font-bold">Le poudrage</dt><dd class="text-schist">Une poudre appliquée autour et à l'entrée du nid. Les ouvrières la ramènent elles-mêmes à l'intérieur.</dd></div>
+      <div><dt class="font-bold">La pulvérisation</dt><dd class="text-schist">Un insecticide liquide projeté directement sur le nid, ou dans les ouvertures d'un nid caché.</dd></div>
+      <div><dt class="font-bold">La fumigation</dt><dd class="text-schist">Une fumée insecticide diffusée dans la cavité où se trouve le nid.</dd></div>
+    </dl>
+    <p>Pour les nids en hauteur, nous travaillons à la perche télescopique, en tenue de protection intégrale.</p>
+
+    <figure class="grid gap-3 sm:grid-cols-2">
+      <img src="<%= public_path("images/nid-frelons-porche.jpg") %>" alt="Grand nid de frelons accroché sous l'avant-toit d'un porche" width="576" height="430" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
+      <img src="<%= public_path("images/nid-guepes-mur.jpg") %>" alt="Nid de guêpes ouvert contre un mur" width="1120" height="726" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
+      <figcaption class="sm:col-span-2">Nids de frelons sous un porche et de guêpes contre un mur, deux emplacements fréquents.</figcaption>
+    </figure>
+
+    <h2>Frelon européen, frelon asiatique ou guêpe&nbsp;?</h2>
+    <p>Taille, couleur de l'abdomen, couleur des pattes&nbsp;: <a href="<%= article_path("89681912-la-saison-des-guepes-et-frelons") %>" class="link">comment les distinguer</a>.</p>
+  </div>
+
+  <%- partial("shared/specimens_aside", {}) %>
+</section>
+
+<%- partial("shared/contact", {}) %>

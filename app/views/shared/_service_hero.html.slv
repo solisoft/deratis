@@ -1,0 +1,11 @@
+<%# Opening of a service page: the name of the treatment, one sentence, the call. %>
+<section class="border-b border-rule">
+  <div class="mx-auto max-w-6xl px-4 pt-12 pb-14 sm:px-6 md:pt-16">
+    <h1 class="display text-6xl sm:text-7xl lg:text-8xl"><%= @title %></h1>
+    <p class="mt-6 max-w-2xl text-xl text-schist"><%= @lead %></p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="<%= deratis_phone_uri() %>" class="btn-call text-lg"><%- phone_icon("h-5 w-5") %>Appeler le <%= deratis_phone() %></a>
+      <a href="#devis" class="btn-line text-lg">Demander un devis</a>
+    </div>
+  </div>
+</section>

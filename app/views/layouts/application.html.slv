@@ -1,23 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %> - Soli App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | Dératis</title>
+  <% if description %>
+  <meta name="description" content="<%= description %>">
+  <% end %>
+  <meta name="theme-color" content="#17261e">
 
-    <!-- Tailwind CSS (compiled) -->
-    <link rel="stylesheet" href="<%= public_path("css/application.css") %>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="<%= public_path("css/application.css") %>">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "LocalBusiness",
+   "name": "Dératis",
+   "description": "Dératisation, désinsectisation, destruction de nids de guêpes et frelons.",
+   "telephone": "+33767561307",
+   "email": "contact@deratis.fr",
+   "url": "https://deratis.fr/",
+   "foundingDate": "2006",
+   "address": {"@type": "PostalAddress", "postalCode": "30340", "addressLocality": "Rousson", "addressCountry": "FR"},
+   "areaServed": ["Gard", "Lozère", "Ardèche"],
+   "sameAs": ["https://www.facebook.com/deratis.fr/"]
+  }
+  </script>
 </head>
-<body class="min-h-full bg-slate-950 text-white font-sans antialiased">
-    <%= yield %>
+<body class="min-h-full pb-16 md:pb-0">
+  <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-plate focus:px-4 focus:py-2">Aller au contenu</a>
 
-    <!-- HTMx + Alpine.js (Soli's default client stack — see /docs/core-concepts/client-interactivity) -->
-    <script defer src="<%= public_path("js/htmx.min.js") %>"></script>
-    <script defer src="<%= public_path("js/alpine.min.js") %>"></script>
+  <%- partial("shared/header", {}) %>
+
+  <main id="contenu">
+    <%= yield %>
+  </main>
+
+  <%- partial("shared/footer", {}) %>
+
+  <%# Mobile: the phone number stays one tap away on every page. %>
+  <a href="<%= deratis_phone_uri() %>" class="fixed inset-x-0 bottom-0 z-40 flex items-center justify-center gap-3 bg-wasp py-3.5 font-bold text-ink no-underline shadow-[0_-2px_12px_rgb(0_0_0/0.18)] md:hidden" style="font-stretch: 90%">
+    <%- phone_icon("h-5 w-5") %>
+    Appeler le <%= deratis_phone() %>
+  </a>
+
+  <script defer src="<%= public_path("js/alpine.min.js") %>"></script>
 </body>
 </html>

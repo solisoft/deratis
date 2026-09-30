@@ -1,0 +1,5 @@
+<section class="mx-auto max-w-6xl px-4 pt-12 pb-4 sm:px-6 md:pt-16">
+  <h1 class="display text-6xl sm:text-7xl lg:text-8xl">Demander un devis</h1>
+</section>
+
+<%- partial("shared/contact", {}) %>

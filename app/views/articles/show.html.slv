@@ -1,0 +1,33 @@
+<article>
+  <header class="border-b border-rule">
+    <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 md:pt-14">
+      <a href="<%= articles_path() %>" class="link text-sm">Tous les conseils</a>
+      <h1 class="display mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-7xl"><%= @article["title"] %></h1>
+      <p class="mt-5 max-w-2xl text-xl text-schist"><%= @article["summary"] %></p>
+    </div>
+  </header>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_18rem]">
+    <div class="prose-deratis">
+      <%- partial("articles/" + @article["body"], {}) %>
+    </div>
+
+    <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
+      <div class="border-t-[3px] border-wasp pt-4">
+        <p class="text-lg font-bold">Un doute, une question&nbsp;?</p>
+        <p class="mt-1 text-schist">Décrivez-nous ce que vous voyez, nous vous disons ce qu'il en est.</p>
+        <a href="<%= deratis_phone_uri() %>" class="btn-call mt-4"><%- phone_icon("h-4 w-4") %><%= deratis_phone() %></a>
+      </div>
+      <div class="border-t border-rule pt-4">
+        <p class="font-bold">À lire aussi</p>
+        <ul class="mt-2 space-y-2">
+          <% for other in @others %>
+          <li><a href="<%= article_path(other["slug"]) %>" class="link font-normal"><%= other["title"] %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</article>
+
+<%- partial("shared/contact", {}) %>

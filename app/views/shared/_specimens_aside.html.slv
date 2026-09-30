@@ -1,0 +1,6 @@
+<%# The specimens a service page treats, stacked beside its prose. %>
+<aside class="space-y-5 lg:sticky lg:top-24 lg:self-start" aria-label="Espèces traitées">
+  <% for pest in @pests %>
+  <%- partial("shared/plate", {"pest": pest}) %>
+  <% end %>
+</aside>

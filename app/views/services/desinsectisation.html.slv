@@ -1,0 +1,40 @@
+<%- partial("shared/service_hero", {}) %>
+
+<section class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_20rem]">
+  <div class="prose-deratis">
+    <h2 class="!mt-0">Les insectes que nous traitons</h2>
+    <ul>
+      <li>Cafards et blattes, y compris les cafards d'égout.</li>
+      <li>Fourmis, dans la maison comme dans les sous-sols.</li>
+      <li>Punaises de lit.</li>
+      <li>Scorpions et araignées.</li>
+      <li>Nids de guêpes et de frelons, avec enlèvement du nid&nbsp;: voir <a href="<%= guepes_et_frelons_path() %>" class="link">guêpes et frelons</a>.</li>
+    </ul>
+
+    <h2>Punaises de lit</h2>
+    <p>Elles se cachent dans la literie, les sommiers et les plinthes, et ne partent pas d'elles-mêmes. Notre intervention&nbsp;:</p>
+    <ul>
+      <li>un devis gratuit et une intervention dans les plus brefs délais, à vos horaires&nbsp;;</li>
+      <li>l'analyse des nuisibles et de l'environnement par un agent agréé&nbsp;;</li>
+      <li>un traitement avec des produits professionnels adaptés&nbsp;;</li>
+      <li>un traitement à la vapeur sèche, notamment pour la literie&nbsp;;</li>
+      <li>une procédure préventive contre les récidives.</li>
+    </ul>
+
+    <figure>
+      <img src="<%= public_path("images/technicien-traitement.jpg") %>" alt="Technicien en combinaison et masque, pulvérisant un traitement dans une pièce" width="300" height="345" loading="lazy" class="w-full max-w-xs rounded-sm">
+      <figcaption>Un large panel d'outils et de techniques, choisis selon l'insecte et le lieu.</figcaption>
+    </figure>
+  </div>
+
+  <%- partial("shared/specimens_aside", {}) %>
+</section>
+
+<section class="border-t border-rule">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <h2 class="display text-5xl">Comment se passe une intervention</h2>
+    <div class="mt-10"><%- partial("shared/steps", {}) %></div>
+  </div>
+</section>
+
+<%- partial("shared/contact", {}) %>

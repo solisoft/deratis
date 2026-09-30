@@ -1,0 +1,32 @@
+<header class="sticky top-0 z-30 border-b border-rule bg-paper/95 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+    <a href="<%= root_path() %>" class="flex items-baseline gap-2 text-ink no-underline" aria-label="Dératis, accueil">
+      <span class="display text-[2rem] leading-none">Dératis</span>
+      <span class="hidden text-sm text-schist lg:inline">Rousson, Gard</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Principale">
+      <a href="<%= deratisation_path() %>" class="<%= nav_link_class("deratisation", @current_nav) %>">Dératisation</a>
+      <a href="<%= desinsectisation_path() %>" class="<%= nav_link_class("desinsectisation", @current_nav) %>">Désinsectisation</a>
+      <a href="<%= guepes_et_frelons_path() %>" class="<%= nav_link_class("guepes_et_frelons", @current_nav) %>">Guêpes et frelons</a>
+      <a href="<%= rats_et_souris_path() %>" class="<%= nav_link_class("rats_et_souris", @current_nav) %>">Rats et souris</a>
+      <a href="<%= articles_path() %>" class="<%= nav_link_class("articles", @current_nav) %>">Conseils</a>
+    </nav>
+
+    <a href="<%= deratis_phone_uri() %>" class="btn-call hidden !py-2 md:inline-flex">
+      <%- phone_icon("h-4 w-4") %><%= deratis_phone() %>
+    </a>
+
+    <details class="relative md:hidden">
+      <summary class="flex cursor-pointer list-none items-center gap-2 rounded-md border-2 border-ink px-3 py-1.5 font-bold [&::-webkit-details-marker]:hidden">Menu</summary>
+      <nav class="absolute right-0 mt-2 flex w-64 flex-col border border-rule bg-plate p-2 shadow-lg" aria-label="Principale">
+        <a href="<%= deratisation_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Dératisation</a>
+        <a href="<%= desinsectisation_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Désinsectisation</a>
+        <a href="<%= guepes_et_frelons_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Guêpes et frelons</a>
+        <a href="<%= rats_et_souris_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Rats et souris</a>
+        <a href="<%= articles_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Conseils</a>
+        <a href="<%= contact_path() %>" class="px-3 py-2.5 font-semibold text-ink no-underline">Demander un devis</a>
+      </nav>
+    </details>
+  </div>
+</header>

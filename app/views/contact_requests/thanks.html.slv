@@ -1,0 +1,9 @@
+<section class="mx-auto max-w-3xl px-4 py-20 sm:px-6 md:py-28">
+  <h1 class="display text-6xl sm:text-7xl">Demande envoyée</h1>
+  <p class="mt-6 text-xl text-schist">Merci. Nous vous rappelons au plus vite au numéro que vous avez indiqué pour convenir d'un passage.</p>
+  <p class="mt-4 text-lg">C'est urgent, un nid près d'une porte ou des rongeurs dans une cuisine&nbsp;? N'attendez pas notre appel&nbsp;:</p>
+  <div class="mt-8 flex flex-wrap gap-3">
+    <a href="<%= deratis_phone_uri() %>" class="btn-call text-lg"><%- phone_icon("h-5 w-5") %>Appeler le <%= deratis_phone() %></a>
+    <a href="<%= root_path() %>" class="btn-line text-lg">Retour à l'accueil</a>
+  </div>
+</section>

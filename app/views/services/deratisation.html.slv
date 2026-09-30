@@ -1,0 +1,38 @@
+<%- partial("shared/service_hero", {}) %>
+
+<section class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_20rem]">
+  <div class="prose-deratis">
+    <h2 class="!mt-0">Ce que comprend l'intervention</h2>
+    <ul>
+      <li>Un devis gratuit.</li>
+      <li>Une intervention dans les plus brefs délais, à l'horaire qui vous convient.</li>
+      <li>L'analyse des nuisibles et de leur environnement par un agent agréé.</li>
+      <li>Un traitement avec des produits professionnels adaptés à l'espèce.</li>
+      <li>La mise en place d'une procédure préventive contre les récidives.</li>
+      <li>Une intervention en toute discrétion.</li>
+    </ul>
+
+    <h2>Pourquoi ne pas attendre</h2>
+    <p>Les rongeurs souillent bien plus qu'ils ne mangent&nbsp;: toute denrée entamée doit être jetée. Ils rongent aussi les isolants, les gaines et les câbles électriques, avec à la clé des pannes, des courts-circuits et des départs de feu.</p>
+    <p class="border-l-[3px] border-rust pl-4 text-ink">Par morsure, par leur urine ou par leurs puces, ils transmettent des maladies à l'homme et aux animaux domestiques, dont la leptospirose.</p>
+    <p>Le détail des espèces et des risques est sur la page <a href="<%= rats_et_souris_path() %>" class="link">rats et souris</a>.</p>
+
+    <h2>Vous n'êtes pas sûr&nbsp;?</h2>
+    <p>Bruits de grattement la nuit, crottes près des aliments, traces grasses le long des murs, odeur tenace&nbsp;: nous avons listé <a href="<%= article_path("2100316856-comment-detecter-la-presence-de-rongeurs") %>" class="link">les huit signes qui trahissent des rongeurs</a>.</p>
+
+    <figure>
+      <img src="<%= public_path("images/rat-cave.jpg") %>" alt="Un rat longeant un mur dans une cave" width="460" height="200" loading="lazy" class="w-full rounded-sm">
+    </figure>
+  </div>
+
+  <%- partial("shared/specimens_aside", {}) %>
+</section>
+
+<section class="border-t border-rule">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <h2 class="display text-5xl">Comment se passe une intervention</h2>
+    <div class="mt-10"><%- partial("shared/steps", {}) %></div>
+  </div>
+</section>
+
+<%- partial("shared/contact", {}) %>

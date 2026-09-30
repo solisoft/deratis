@@ -1,0 +1,34 @@
+<p class="text-lg">Rats et souris sont nocturnes et discrets. On les remarque rarement avant les dégâts qu'ils laissent. Voici les signes à surveiller.</p>
+
+<h2>Des matériaux rongés</h2>
+<p>Leurs incisives poussent sans arrêt&nbsp;; pour les user, ils rongent isolants, câbles électriques, bois et tuyaux en PVC. Risque d'incendie d'un côté, de dégât des eaux de l'autre.</p>
+
+<h2>Des aliments souillés ou entamés</h2>
+<p>Ils s'introduisent dans les réserves et contaminent de grandes quantités de nourriture par leurs excréments, leur urine, ou simplement en y touchant.</p>
+
+<h2>Des crottes</h2>
+<p>C'est l'indice le plus sûr. Leur taille, leur forme et leur couleur aident à identifier l'espèce&nbsp;: petites et pointues pour la souris, plus grosses et épaisses pour le rat.</p>
+
+<h2>Des griffures et des traces de dents</h2>
+<p>Sur les matériaux, les meubles ou les murs.</p>
+
+<h2>Des traces de passage</h2>
+<p>Leur fourrure grasse laisse des traînées sombres le long des murs et des tuyaux, toujours aux mêmes endroits.</p>
+
+<h2>Des bruits la nuit</h2>
+<p>Déplacements, grattements, rongements, parfois des cris, surtout la nuit quand ils sont le plus actifs.</p>
+
+<h2>Une odeur</h2>
+<p>Leur urine a une odeur forte et tenace. Elle signale une présence installée et aide à localiser les nids.</p>
+
+<h2>Des individus en plein jour</h2>
+<p>Comme ils sont nocturnes, en voir de jour laisse penser que la population est trop nombreuse pour rester cachée.</p>
+
+<h2>Et ensuite</h2>
+<p>Éliminer les rongeurs ne suffit pas&nbsp;: il faut aussi les empêcher de revenir.</p>
+<ul>
+  <li>mettre les sources de nourriture hors d'atteinte&nbsp;;</li>
+  <li>boucher les points d'entrée&nbsp;;</li>
+  <li>surveiller régulièrement.</li>
+</ul>
+<p>Privilégiez des solutions conformes à la réglementation sur les biocides, éprouvées pour leur efficacité et leur sécurité. C'est ce que nous proposons&nbsp;: voir <a href="<%= deratisation_path() %>" class="link">la dératisation</a>.</p>
