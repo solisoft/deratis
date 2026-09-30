@@ -3,8 +3,8 @@
   <% for step, i in @steps %>
   <li class="border-t-[3px] border-ink pt-4">
     <span class="display block text-5xl text-ink/25" aria-hidden="true"><%= i + 1 %></span>
-    <h3 class="mt-2 text-xl font-bold"><%= step["title"] %></h3>
-    <p class="mt-2 text-schist"><%= step["text"] %></p>
+    <h3 class="mt-2 text-xl font-bold"><%- fr_text(step["title"]) %></h3>
+    <p class="mt-2 text-schist"><%- fr_text(step["text"]) %></p>
   </li>
   <% end %>
 </ol>

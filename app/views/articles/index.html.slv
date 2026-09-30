@@ -12,8 +12,8 @@
       <a href="<%= article_path(article["slug"]) %>" class="group grid gap-6 py-8 text-ink no-underline sm:grid-cols-[16rem_1fr] sm:items-center">
         <img src="<%= public_path("images/" + article["image"]) %>" alt="" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
         <div>
-          <h2 class="heading text-3xl group-hover:underline sm:text-4xl"><%= article["title"] %></h2>
-          <p class="mt-3 max-w-xl text-lg text-schist"><%= article["summary"] %></p>
+          <h2 class="heading text-3xl group-hover:underline sm:text-4xl"><%- fr_text(article["title"]) %></h2>
+          <p class="mt-3 max-w-xl text-lg text-schist"><%- fr_text(article["summary"]) %></p>
         </div>
       </a>
     </article>

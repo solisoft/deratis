@@ -3,10 +3,10 @@ class ServicesController < PublicController
   # GET /fr/deratisation
   def deratisation
     @title = "Dératisation"
-    @description = "Dératisation dans le Gard, la Lozère et l'Ardèche\u{a0}: devis gratuit, diagnostic par un agent "
+    @description = "Dératisation dans le Gard, la Lozère et l'Ardèche : devis gratuit, diagnostic par un agent "
     + "agréé, traitement adapté et prévention des récidives."
     @current_nav = "deratisation"
-    @lead = "Rats et souris dans la maison, la cave, le grenier ou vos locaux\u{a0}: un agent agréé "
+    @lead = "Rats et souris dans la maison, la cave, le grenier ou vos locaux : un agent agréé "
     + "identifie l'espèce, traite, puis bouche les accès pour qu'ils ne reviennent pas."
     @_prepare(["deratisation", "rats_et_souris"], "rats-souris")
   end
@@ -14,10 +14,10 @@ class ServicesController < PublicController
   # GET /fr/desinsectisation
   def desinsectisation
     @title = "Désinsectisation"
-    @description = "Cafards, fourmis, punaises de lit, scorpions, araignées\u{a0}: traitements professionnels et "
+    @description = "Cafards, fourmis, punaises de lit, scorpions, araignées : traitements professionnels et "
     + "discrets pour particuliers et professionnels autour d'Alès."
     @current_nav = "desinsectisation"
-    @lead = "Cafards, fourmis, punaises de lit, scorpions, araignées\u{a0}: un service rapide, soigné et "
+    @lead = "Cafards, fourmis, punaises de lit, scorpions, araignées : un service rapide, soigné et "
     + "discret, pour les particuliers comme pour les professionnels."
     @_prepare(["desinsectisation"], "punaises")
   end
@@ -28,7 +28,7 @@ class ServicesController < PublicController
     @description = "Destruction de nids de guêpes, frelons européens et frelons asiatiques dans le Gard, "
     + "la Lozère et l'Ardèche, par des opérateurs équipés."
     @current_nav = "guepes_et_frelons"
-    @lead = "Un nid sous le toit, dans un volet roulant ou au fond du jardin\u{a0}: nous le détruisons avec "
+    @lead = "Un nid sous le toit, dans un volet roulant ou au fond du jardin : nous le détruisons avec "
     + "des insecticides professionnels, équipés pour ne pas nous faire piquer, ni vous."
     @_prepare(["guepes_et_frelons"], "guepes-frelons")
   end
@@ -36,7 +36,7 @@ class ServicesController < PublicController
   # GET /fr/rats-et-souris
   def rats_et_souris
     @title = "Rats et souris"
-    @description = "Surmulot, rat noir, souris\u{a0}: les risques qu'ils font courir et comment Dératis vous en "
+    @description = "Surmulot, rat noir, souris : les risques qu'ils font courir et comment Dératis vous en "
     + "débarrasse durablement."
     @current_nav = "rats_et_souris"
     @lead = "Trois espèces vivent à nos côtés dans la région. Savoir laquelle est chez vous indique où "

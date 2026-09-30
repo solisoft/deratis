@@ -15,6 +15,12 @@ describe("Public pages") do
     expect(res_body(result).contains("tel:+33767561307")).to_equal(true)
   end
 
+  test("French punctuation never starts a line") do
+    body = res_body(get("/"))
+    expect(body.contains("leur environnement&nbsp;: espèce")).to_equal(true)
+    expect(body.contains("de rongeurs&nbsp;?")).to_equal(true)
+  end
+
   test("each specimen links to the page that treats it") do
     get("/")
     paths = assigns()["pests"].map do |pest|
@@ -80,6 +86,7 @@ describe("Public pages") do
   test("an unknown article is a 404") do
     result = get("/fr/details/article/inconnu")
     expect(res_status(result)).to_equal(404)
+    expect(res_body(result).contains("Article introuvable")).to_equal(true)
   end
 
   test("the health check answers ok") do

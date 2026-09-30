@@ -28,14 +28,15 @@ describe("ContactRequest") do
     expect(fields.includes?("message")).to_equal(true)
   end
 
-  test("rejects a pest outside the list") do
+  test("drops a pest outside the list but keeps the request") do
     request = ContactRequest.create({
       "name": "A",
       "phone": "0612345678",
       "message": "x",
       "pest": "loup"
     })
-    expect(request._errors[0]["field"]).to_equal("pest")
+    expect(request._key.nil?).to_equal(false)
+    expect(request.pest).to_equal(nil)
   end
 
   test("accepts every pest of the list") do
@@ -47,6 +48,7 @@ describe("ContactRequest") do
         "pest": pest
       })
       expect(request._key.nil?).to_equal(false)
+      expect(request.pest).to_equal(pest)
     end
   end
 end

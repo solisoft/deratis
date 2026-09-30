@@ -113,3 +113,10 @@ def contact_pest_choices
     ["autre", "Autre, je ne sais pas"]
   ]
 end
+
+# French text for HTML: escaped, with a no-break space before : ; ? ! so the
+# sign never starts a line. Output it with <%- %>.
+def fr_text(text) -> String
+  escaped = html_escape(text.to_s);
+  [" :", " ;", " ?", " !"].reduce(fn(html, sign) { html.replace(sign, "&nbsp;" + sign.trim) }, escaped)
+end

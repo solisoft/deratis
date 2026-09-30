@@ -50,7 +50,6 @@ describe("ContactRequestsController") do
     expect(errors["name"]).to_equal("Indiquez votre nom.")
     expect(errors["phone"].starts_with("Indiquez un numéro")).to_equal(true)
     expect(errors["email"]).to_equal("Cette adresse e-mail n'est pas valide.")
-    expect(errors["pest"]).to_equal("Choisissez un nuisible dans la liste.")
     expect(res_body(result).contains("aria-invalid=\"true\"")).to_equal(true)
     expect(ContactRequest.all.length).to_equal(0)
   end

@@ -1,5 +1,9 @@
 # Site — the company's fixed facts and the catalogue of pests, services and
 # articles shared by every page. Content only: the pages hold the prose.
+#
+# French strings keep a plain space before : ; ? ! — views print them through
+# `fr_text`, which makes it a no-break space. Not in the source: the published
+# soli 2.9.1 has no \u escape, and `soli fmt` turns a raw U+00A0 into one.
 class Site
   # The specimens of the "what is bothering you?" index. `service` is the
   # service page that treats it; `size` is the adult body length.
@@ -60,7 +64,7 @@ class Site
       },
       {
         "title": "Diagnostic sur place",
-        "text": "Un agent agréé analyse les nuisibles et leur environnement\u{a0}: espèce, "
+        "text": "Un agent agréé analyse les nuisibles et leur environnement : espèce, "
         + "points d'entrée, étendue de l'infestation."
       },
       {
@@ -81,7 +85,7 @@ class Site
     [
       {
         "slug": "2100316856-comment-detecter-la-presence-de-rongeurs",
-        "title": "Comment détecter la présence de rongeurs\u{a0}?",
+        "title": "Comment détecter la présence de rongeurs ?",
         "summary": "Huit signes qui trahissent des rats ou des souris, "
         + "des fils rongés aux traces grasses le long des murs.",
         "body": "rongeurs",

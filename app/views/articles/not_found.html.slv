@@ -1,0 +1,9 @@
+<section class="mx-auto max-w-3xl px-4 py-20 sm:px-6 md:py-28">
+  <h1 class="display text-6xl sm:text-7xl">Article introuvable</h1>
+  <p class="mt-6 text-xl text-schist">Cette adresse ne mène à aucun article. Voici ceux que nous avons publiés&nbsp;:</p>
+  <ul class="mt-8 space-y-3 text-lg">
+    <% for article in @articles %>
+    <li><a href="<%= article_path(article["slug"]) %>" class="link"><%- fr_text(article["title"]) %></a></li>
+    <% end %>
+  </ul>
+</section>

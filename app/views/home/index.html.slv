@@ -100,8 +100,8 @@
       <article>
         <a href="<%= article_path(article["slug"]) %>" class="group block text-ink no-underline">
           <img src="<%= public_path("images/" + article["image"]) %>" alt="" loading="lazy" class="aspect-[4/3] w-full rounded-sm object-cover">
-          <h3 class="heading mt-4 text-2xl group-hover:underline"><%= article["title"] %></h3>
-          <p class="mt-2 text-schist"><%= article["summary"] %></p>
+          <h3 class="heading mt-4 text-2xl group-hover:underline"><%- fr_text(article["title"]) %></h3>
+          <p class="mt-2 text-schist"><%- fr_text(article["summary"]) %></p>
         </a>
       </article>
       <% end %>

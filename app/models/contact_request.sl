@@ -37,6 +37,10 @@ class ContactRequest < Model
     @name = @name.trim unless @name.nil?
     @phone = @phone.trim unless @phone.nil?
     @email = @email.trim.downcase unless @email.nil?
+    # Only a tampered form sends another value; keep the request, drop the
+    # value. (A validation would do, but the published soli 2.9.1 ignores
+    # both `inclusion` and `custom`.)
+    @pest = nil unless ContactRequest.PESTS.includes?(@pest)
     true
   end
 end

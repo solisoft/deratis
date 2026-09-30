@@ -5,14 +5,13 @@ class ContactRequestsController < PublicController
     "name": "Indiquez votre nom.",
     "phone": "Indiquez un numéro de téléphone, par exemple 06 12 34 56 78.",
     "email": "Cette adresse e-mail n'est pas valide.",
-    "message": "Décrivez le problème en quelques mots (4 000 caractères au plus).",
-    "pest": "Choisissez un nuisible dans la liste."
+    "message": "Décrivez le problème en quelques mots (4 000 caractères au plus)."
   }
 
   # GET /contact
   def new
     @title = "Demander un devis"
-    @description = "Demandez un devis gratuit à Dératis\u{a0}: nous vous rappelons au plus vite."
+    @description = "Demandez un devis gratuit à Dératis : nous vous rappelons au plus vite."
     @current_nav = "contact"
     @_new_contact_form(params["nuisible"])
   end

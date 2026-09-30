@@ -2,8 +2,8 @@
   <header class="border-b border-rule">
     <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 md:pt-14">
       <a href="<%= articles_path() %>" class="link text-sm">Tous les conseils</a>
-      <h1 class="display mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-7xl"><%= @article["title"] %></h1>
-      <p class="mt-5 max-w-2xl text-xl text-schist"><%= @article["summary"] %></p>
+      <h1 class="display mt-5 max-w-4xl text-5xl sm:text-6xl lg:text-7xl"><%- fr_text(@article["title"]) %></h1>
+      <p class="mt-5 max-w-2xl text-xl text-schist"><%- fr_text(@article["summary"]) %></p>
     </div>
   </header>
 
@@ -22,7 +22,7 @@
         <p class="font-bold">À lire aussi</p>
         <ul class="mt-2 space-y-2">
           <% for other in @others %>
-          <li><a href="<%= article_path(other["slug"]) %>" class="link font-normal"><%= other["title"] %></a></li>
+          <li><a href="<%= article_path(other["slug"]) %>" class="link font-normal"><%- fr_text(other["title"]) %></a></li>
           <% end %>
         </ul>
       </div>

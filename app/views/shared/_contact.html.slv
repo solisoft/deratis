@@ -46,13 +46,12 @@
 
       <div class="sm:col-span-2">
         <label for="contact-pest" class="field-label">Le nuisible</label>
-        <select id="contact-pest" name="pest" class="field" aria-invalid="<%= @field_errors["pest"] ? "true" : "false" %>">
+        <select id="contact-pest" name="pest" class="field">
           <option value="">Choisir</option>
           <% for choice in contact_pest_choices() %>
           <option value="<%= choice[0] %>"<% if choice[0] == @contact_request.pest %> selected<% end %>><%= choice[1] %></option>
           <% end %>
         </select>
-        <% if @field_errors["pest"] %><p class="field-error-text"><%= @field_errors["pest"] %></p><% end %>
       </div>
 
       <div class="sm:col-span-2">

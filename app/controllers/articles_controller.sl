@@ -11,7 +11,7 @@ class ArticlesController < PublicController
   # GET /fr/details/article/:slug
   def show
     @article = Site.article(params["slug"])
-    halt(404, "Article introuvable") if @article.nil?
+    return @_not_found if @article.nil?
 
     @title = @article["title"]
     @description = @article["summary"]
@@ -20,5 +20,16 @@ class ArticlesController < PublicController
       other["slug"] != @article["slug"]
     end
     @_new_contact_form
+  end
+
+  private
+
+  # A 404 inside the site, pointing at the articles that do exist. Not
+  # `halt(404)`: the published soli 2.9.1 answers it with a 500.
+  def _not_found
+    @title = "Article introuvable"
+    @current_nav = "articles"
+    @articles = Site.articles
+    render("articles/not_found", {}, {"status": 404})
   end
 end
